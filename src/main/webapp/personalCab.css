@@ -1,0 +1,41 @@
+body{
+    background: url("https://previews.123rf.com/images/inarik/inarik1604/inarik160400004/55588968-lilac-flower-on-wood-background-blooms-pink-flowers-in-left-side.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+#wholeContainer{
+    width: 50%;
+    height: 100%;
+    min-width: 600px;
+    min-height: 700px;
+    margin: 0 0 0 42%;
+    border-radius: 100px;
+    box-shadow: 20px 20px 20px grey;
+    background-color: #c899d1;
+    overflow: auto;
+}
+h1{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+}
+button{
+    background-color: #71247b;
+    width: 100px;
+    height: 30px;
+    border-radius: 12px;
+    color: white;
+    margin-top: 10px;
+}
+#holdsForms{
+    text-align: right;
+    margin-right: 35%;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+    overflow: auto;
+}

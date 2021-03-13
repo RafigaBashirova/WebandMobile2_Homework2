@@ -1,0 +1,40 @@
+body{
+    background: url("https://previews.123rf.com/images/inarik/inarik1604/inarik160400005/55588970-lilac-flower-background-blooms-pink-flowers-on-wood-plank.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+#wholeContainer{
+    width: 35%;
+    height: 50%;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 25% 20% 10% 42%;
+    border-radius: 100px;
+    box-shadow: 20px 20px 20px grey;
+    background-color: #c899d1;
+    overflow: auto;
+}
+h1{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+}
+button{
+    background-color: #71247b;
+    width: 100px;
+    height: 30px;
+    border-radius: 12px;
+    color: white;
+    margin-top: 10px;
+}
+#holdsForms{
+    text-align: right;
+    margin-right: 10%;
+    color: white;
+    font-style: italic;
+    font-size: 24px;
+    overflow: auto;
+}
