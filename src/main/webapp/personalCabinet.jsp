@@ -1,9 +1,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="utils.DButils" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="controller_Servlets.AuthenticationServlet" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jstl/sql" %>
 
 <html>
 <head>

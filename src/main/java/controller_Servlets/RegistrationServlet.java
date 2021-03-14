@@ -40,7 +40,6 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
-        HttpSession session = req.getSession();
         System.out.println("thanks...");
     }
 
@@ -63,11 +62,11 @@ public class RegistrationServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
                 System.out.println("SQL exception");
-                req.setAttribute("error_message", new String[] {"error while shcb"});
+                req.setAttribute("error_message", new String[] {"error while connecting to DB"});
             }
         }else{
             System.out.println("Use valid email or password!!");
-            req.setAttribute("error_message", new String[] {"validation errro"});
+            req.setAttribute("error_message", new String[] {"validation error"});
         }
 
 
