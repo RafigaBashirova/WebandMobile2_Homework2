@@ -1,7 +1,5 @@
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="utils.DButils" %>
-<%@ page import="java.sql.SQLException" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="coursesBean" scope="request" class="beans.CoursesBean" />
 
 <html>
 <head>
@@ -43,33 +41,19 @@
                 <th>Course Name</th>
                 <th>Enrollment</th>
             </tr>
-            <%
-                try{
-                    ResultSet result = DButils.queries("SELECT courseId, courseName FROM courses_of_website");
-                    if(result != null){
-                        while(result.next()){
-            %>
-            <form action="/homework2/courses" method="POST">
-                <tr>
-                    <td><%=result.getInt("courseId")%></td>
-                    <td><%=result.getString("courseName")%>
-                        <input type='hidden' name='courseName' value='<%=result.getString("courseName")%>' />
-                    </td>
-                    <td>
-                        <button type="submit" value="enroll">enroll</button>
-                    </td>
-                </tr>
-            </form>
-
-            <%
-                        }
-                    }else{
-                        System.out.println("You have connection problems");
-                    }
-                }catch(SQLException e){
-                    e.printStackTrace();
-                }
-            %>
+            <c:forEach items="${coursesBean.courses}" var="course">
+                <form action="/homework2/courses" method="post">
+                    <tr>
+                        <td><c:out value="${course.id}" /></td>
+                        <td> <c:out value="${course.name}" />
+                            <input type='hidden' name='courseName' value='<c:out value="${course.name}" />' />
+                        </td>
+                        <td>
+                            <button type="submit" value="enroll">enroll</button>
+                        </td>
+                    </tr>
+                </form>
+            </c:forEach>
         </table>
     </div>
 
