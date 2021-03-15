@@ -1,12 +1,12 @@
 package beans;
 
-public class CourseBean {
+public class ForCourseofwebsiteBean {
     private int id;
     private String name;
 
-    public CourseBean(){}
+    public ForCourseofwebsiteBean(){}
 
-    public CourseBean(Integer courseId, String courseName) {
+    public ForCourseofwebsiteBean(Integer courseId, String courseName) {
         setId(courseId);
         setName(courseName);
     }

@@ -51,7 +51,7 @@ public class DButils {
     }
 
     //This is to execute queries as "select"
-    public static ResultSet query(String sql, String... args) throws SQLException {
+    public static ResultSet executeQeuryAsSelect(String sql, String... args) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -98,46 +98,6 @@ public class DButils {
             if(connection != null) {
                 connection.close();
             }
-        }
-
-        return 0;
-    }
-
-
-    public static ResultSet queries(String sql) throws SQLException {
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = DButils.dataSource.getConnection();
-            statement = connection.prepareStatement(sql);
-            resultSet = statement.executeQuery();
-
-            return resultSet;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("You have problem there");
-        } finally {
-            if(connection != null) {
-                // cant close connection because method is fetching data
-            }
-        }
-
-        return null;
-    }
-
-
-    public static int intquery(String sql, String[] strings) throws SQLException {
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        int result;
-        try (Connection connection = DButils.dataSource.getConnection()) {
-            statement = connection.prepareStatement(sql);
-            result = statement.executeUpdate();
-            return result;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("You have problem there");
         }
 
         return 0;

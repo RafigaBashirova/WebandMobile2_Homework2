@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="coursesBean" scope="request" class="beans.CoursesBean" />
+<jsp:useBean id="ForCoursesofwebsiteBean" scope="request" class="beans.ForCoursesofwebsiteBean" />
 
 <html>
 <head>
@@ -41,7 +41,7 @@
                 <th>Course Name</th>
                 <th>Enrollment</th>
             </tr>
-            <c:forEach items="${coursesBean.courses}" var="course">
+            <c:forEach items="${ForCoursesofwebsiteBean.courses}" var="course">
                 <form action="/homework2/courses" method="post">
                     <tr>
                         <td><c:out value="${course.id}" /></td>

@@ -38,7 +38,7 @@ public class AuthenticationServlet extends HttpServlet {
         String password = req.getParameter(AuthenticationServlet.PASSWORDS);
         if(email != null && password != null && email.length() > 3 && password.length() > 3){
             try {
-                ResultSet resultSet = DButils.query("SELECT * from users_added WHERE email=? LIMIT 1", new String[]{email});
+                ResultSet resultSet = DButils.executeQeuryAsSelect("SELECT * from users_added WHERE email=? LIMIT 1", new String[]{email});
                 if (resultSet != null && resultSet.next() && resultSet.getInt("userid") > 0) {
                     if (checkHash(password, resultSet.getString("passwordEncrypted"))) {
                         HttpSession session = req.getSession();
